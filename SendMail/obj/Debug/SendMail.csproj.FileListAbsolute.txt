@@ -1,0 +1,11 @@
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\SendMail.exe.config
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\SendMail.exe
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\SendMail.pdb
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\obj\Debug\SendMail.csprojAssemblyReference.cache
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\obj\Debug\SendMail.csproj.CoreCompileInputs.cache
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\obj\Debug\SendMail.exe
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\obj\Debug\SendMail.pdb
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\EMail_Campaign.exe
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\EMail_Campaign.pdb
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\bin\Debug\EMail_Campaign.exe.config
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\SendMail\obj\Debug\SendMail.csproj.CopyComplete
