@@ -20,3 +20,5 @@ D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.g.cs
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.baml
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.g.cs
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.baml

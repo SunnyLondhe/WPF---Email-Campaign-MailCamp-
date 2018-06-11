@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:EMail_Campaign"
         mc:Ignorable="d"
         Title="Mail Camp | Email Client"  WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded"
         ResizeMode="CanMinimize"
         WindowState="Maximized" UseLayoutRounding="False">
     
@@ -14,17 +15,17 @@
         <DockPanel Margin="10">
 
             <Button x:Name="DashboardMenu" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="DashboardMenu_Click" >
-                <Image Source="Resources/Image/DashBoard.png" />
+                <Image Source="Resources/Image/DashBoard.png" ToolTip="Dashboard" />
             </Button>
             
             <Button x:Name="ContactMenu" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="ContactMenu_Click" >
-                <Image Source="Resources/Image/client.png" />
+                <Image Source="Resources/Image/client.png" ToolTip="Contacts" />
             </Button>
             <Button x:Name="TemplateMenu" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="TemplateMenu_Click" >
-                <Image Source="Resources/Image/Template.png" />
+                <Image Source="Resources/Image/Template.png" ToolTip="Email Template" />
             </Button>
             <Button x:Name="SettingMenu" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="SettingMenu_Click" >
-                <Image Source="Resources/Image/Setting.png" />
+                <Image Source="Resources/Image/Setting.png" ToolTip="Settings" />
             </Button>
             <Image Height="50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="250" Margin="0,5,0,0" Source="Resources/Image/Logo.png"/>
             

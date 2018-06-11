@@ -15,7 +15,7 @@
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Margin="0,5,0,0">
                         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Host"  VerticalAlignment="Center" />
                         <TextBox x:Name="txtHostName" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding host}" Width="200">
-                            
+
                         </TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Margin="0,5,0,0">
@@ -38,10 +38,11 @@
                 </StackPanel>
 
             </GroupBox>
-
-
         </Grid>
-
+        <GroupBox Header="Language Configuration" HorizontalAlignment="Left" Margin="15,210,0,0"  >
+            <StackPanel HorizontalAlignment="Left"  Margin="10,20,0,0" VerticalAlignment="Top"  >
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </UserControl>

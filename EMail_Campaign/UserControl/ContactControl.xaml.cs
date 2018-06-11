@@ -26,6 +26,8 @@ namespace EMail_Campaign.UserControl
     {
         ObservableCollection<Contact> contacts;
 
+        ObservableCollection<Contact> groupContacts = new ObservableCollection<Contact>();
+
         public ContactControl()
         {
             InitializeComponent();
@@ -35,6 +37,8 @@ namespace EMail_Campaign.UserControl
             try
             {
                 contacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("contacts.xml");
+                fillFileList();
+                //cboGroups.SelectedItem = "--Blank--";
             }
             catch (Exception ex)
             {
@@ -43,6 +47,7 @@ namespace EMail_Campaign.UserControl
 
             setGenderCbo();
             lbx_Contact.ItemsSource = contacts;
+
             //ListView1.ItemsSource = contacts;
         }
 
@@ -57,7 +62,18 @@ namespace EMail_Campaign.UserControl
 
 
         }
+        public void fillFileList()
+        {
+            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory(), "G*.xml");
+            // cboGroups.Items.Add("--Blank--");
+            foreach (string file in filePaths)
+            {
+                var fileName = System.IO.Path.GetFileName(file);
+                cboGroups.Items.Add(fileName.Remove(0, 1).Replace(".xml", ""));
 
+            }
+
+        }
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
             int counter = 0;
@@ -86,9 +102,9 @@ namespace EMail_Campaign.UserControl
 
                     MessageBox.Show(ex.Message.ToString());
                 }
-               
+
             }
-            
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -104,7 +120,7 @@ namespace EMail_Campaign.UserControl
             txtState.Clear();
             txtZip.Clear();
             txtEmail.Clear();
-      
+
 
 
         }
@@ -183,9 +199,126 @@ namespace EMail_Campaign.UserControl
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var con = new Contact { Name = txtName.Text.ToString(), City = txtCity.Text.ToString(), State = txtState.Text.ToString(), Zip = txtZip.Text.ToString(), Email = txtEmail.Text.ToString(), Age = txtAge.Text.ToString(), Gender = cboGender.SelectedItem.ToString() };
-            contacts.Add(con);
-            Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+            if (!string.IsNullOrEmpty(txtName.Text) || !string.IsNullOrEmpty(txtEmail.Text))
+            {
+                var con = new Contact { Name = txtName.Text.ToString(), City = txtCity.Text.ToString(), State = txtState.Text.ToString(), Zip = txtZip.Text.ToString(), Email = txtEmail.Text.ToString(), Age = txtAge.Text.ToString(), Gender = cboGender.SelectedItem.ToString() };
+                contacts.Add(con);
+                Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+                clearText();
+            }
+            else {
+                MessageBox.Show("Please provide Name and Email-ID");
+            }
+        }
+
+        private void btnGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            if (cboGroups.SelectedItem == null)
+            {
+                if (string.IsNullOrEmpty(txt_GroupName.Text))
+                {
+                    MessageBox.Show("Please Enter Name for the Group");
+                }
+                else
+                {
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("G" + txt_GroupName.Text + ".xml", groupContacts);
+                    groupContacts.Clear();
+                    txt_GroupName.Clear();
+                    fillFileList();
+                }
+            }
+            else
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure? ", "You want to update the selected group", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("G" + cboGroups.SelectedItem.ToString() + ".xml", groupContacts);
+                    groupContacts.Clear();
+                    txt_GroupName.Clear();
+                    cboGroups.Items.Clear();
+                    fillFileList();
+                }
+            }
+
+        }
+
+        private void btnDeleteGroup_Click(object sender, RoutedEventArgs e)
+        {
+            groupContacts.Remove(lbx_ContGroup.SelectedItem as Contact);
+
+        }
+
+        private void btnAddtoGroup_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbx_Contact.SelectedItems.Count > 0)
+            {
+                List<Contact> selectedContacts = lbx_Contact.SelectedItems.Cast<Contact>().ToList();
+
+                selectedContacts.ToList().ForEach(groupContacts.Add);
+                lbx_ContGroup.ItemsSource = groupContacts;
+                MessageBox.Show("Selected Items count is " + lbx_Contact.SelectedItems.Count);
+            }
+            else
+            {
+                MessageBox.Show("Please select contacts to add in group");
+
+            }
+        }
+
+        private void btnDelGroup_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure? ", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    File.Delete(Directory.GetCurrentDirectory() + "\\G" + cboGroups.SelectedItem.ToString() + ".xml");
+                    fillFileList();
+                    MessageBox.Show("Group " + cboGroups.SelectedItem.ToString() + " Deleted Successfullty");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+
+
+        }
+
+        private void cboGroups_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (cboGroups.SelectedItem == null)
+                {
+                    groupContacts.Clear();
+                    txt_GroupName.Clear();
+                }
+                else
+                {
+
+                    if (!string.IsNullOrEmpty(cboGroups.SelectedItem.ToString()))
+                    {
+                        groupContacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("G" + cboGroups.SelectedItem.ToString() + ".xml");
+                        lbx_ContGroup.ItemsSource = groupContacts;
+                        fillFileList();
+                    }
+                    else
+                    {
+                        groupContacts.Clear();
+                        txt_GroupName.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error : " + ex.Message);
+            }
+
         }
     }
 }

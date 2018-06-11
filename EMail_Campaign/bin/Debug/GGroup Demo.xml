@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact>
+    <Name>Lauren Nicols</Name>
+    <Email>lauren@3gwhse.com</Email>
+    <Gender>Female</Gender>
+    <City>Farmingdale</City>
+    <State>NY</State>
+    <Zip>11735</Zip>
+    <Age>25</Age>
+  </Contact>
+  <Contact>
+    <Name>Frieda Haldakara</Name>
+    <Email>247nyaides@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Brooklyn</City>
+    <State>NY</State>
+    <Zip>11234</Zip>
+    <Age>40</Age>
+  </Contact>
+  <Contact>
+    <Name>Michael Higgins</Name>
+    <Email>michael@360restorationusa.com</Email>
+    <Gender>Male</Gender>
+    <City>Long Island City</City>
+    <State>NY</State>
+    <Zip>11101</Zip>
+    <Age>42</Age>
+  </Contact>
+  <Contact>
+    <Name>Manuel Lebron</Name>
+    <Email>omar@lebronrestaurantsupply.com</Email>
+    <Gender>Female</Gender>
+    <City>New York</City>
+    <State>NY</State>
+    <Zip>10034</Zip>
+    <Age>43</Age>
+  </Contact>
+  <Contact>
+    <Name>Ann Chanler</Name>
+    <Email>squangle1@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>New York</City>
+    <State>NY</State>
+    <Zip>10013</Zip>
+    <Age>23</Age>
+  </Contact>
+  <Contact>
+    <Name>Josephine Banks</Name>
+    <Email>jofloyd46@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Brooklyn</City>
+    <State>NY</State>
+    <Zip>11236</Zip>
+    <Age>20</Age>
+  </Contact>
+</ArrayOfContact>

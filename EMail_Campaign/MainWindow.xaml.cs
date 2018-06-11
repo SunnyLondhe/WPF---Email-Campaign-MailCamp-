@@ -49,7 +49,11 @@ namespace EMail_Campaign
 
         private void DashboardMenu_Click(object sender, RoutedEventArgs e)
         {
+            if (Grd_MainView.Children.Count > 0)
+                Grd_MainView.Children.RemoveAt(0);
+            UserControl.Dashboard C_Dashboard = new UserControl.Dashboard();
 
+            Grd_MainView.Children.Add(C_Dashboard);
         }
 
         private void SettingMenu_Click(object sender, RoutedEventArgs e)
@@ -60,6 +64,12 @@ namespace EMail_Campaign
 
             Grd_MainView.Children.Add(C_Setting);
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserControl.Dashboard C_Dashboard = new UserControl.Dashboard();
+            Grd_MainView.Children.Add(C_Dashboard);
         }
     }
 }

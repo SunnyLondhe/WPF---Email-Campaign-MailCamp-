@@ -35,7 +35,7 @@
             <GroupBox Width="900" Header="All Contacts" HorizontalAlignment="Left" Margin="10,50,50,0"  >
 
                 <Grid>
-                    <ListView Margin="10,60,12,61" Name="lbx_Contact">
+                    <ListView Margin="10,60,12,61" Name="lbx_Contact"  >
                         <ListView.View>
                             <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Contact List">
 
@@ -58,7 +58,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    
+                    <Button x:Name="btnAddtoGroup" Content="Add To Group" Width="80" Height="43" Margin="750,0,0,5" VerticalAlignment="Bottom" Click="btnAddtoGroup_Click" />
                 </Grid>
             </GroupBox>
             
@@ -105,7 +105,25 @@
                 <Button x:Name="btnSave" Content="Save" Width="65" Height="43" Margin="5,0"  VerticalAlignment="Bottom" Click="btnSave_Click" />
                 <Button Content="Browse CSV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="5,0"  Height="43" Click="btnOpenFile_Click"/>
             </StackPanel>
-            
+            <StackPanel FlowDirection="LeftToRight" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="930,450,0,0"  Width="400">
+                <GroupBox Header="Create Group Contacts">
+                    <StackPanel>
+                        <StackPanel HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" Width="300" Height="auto"  >
+                            <TextBlock TextWrapping="Wrap" Text="Select Group"/>
+                            <ComboBox x:Name="cboGroups"  SelectedValue="{Binding Group}" Margin="0,10,0,0" SelectionChanged="cboGroups_SelectionChanged"  />
+                            <ListBox x:Name="lbx_ContGroup"  Margin="0,10" DisplayMemberPath="Name" Height="200" MaxHeight="200"/>
+                            <TextBlock TextWrapping="Wrap" Text="Group Name"/>
+                            <TextBox x:Name="txt_GroupName" Height="23" TextWrapping="Wrap" Margin="0,10,0,0" TextChanged="tbx_filter_TextChanged" />
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Center"  Margin="10,10,0,0" VerticalAlignment="Top" Orientation="Horizontal" Width="300" Height="auto"  >
+                            <Button x:Name="btnGroup" Content="Save Group" Width="80" Height="43" Margin="5,0"  HorizontalAlignment="Left" Click="btnGroup_Click" />
+                            <Button x:Name="btnDeleteGroup" Content="Delete Item" Width="80" Height="43" Margin="0,5" ToolTip="Delete Group Item" HorizontalAlignment="Left" Click="btnDeleteGroup_Click" />
+                            <Button x:Name="btnDelGroup" Content="Delete Group" Width="80" Height="43" Margin="5,5" ToolTip="Delete Group Item" HorizontalAlignment="Left" Click="btnDelGroup_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </GroupBox>
+            </StackPanel>
 
             <Button x:Name="Btn_Help" Content="Help" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,20,0"  Click="Btn_Help_Click"/>
            
