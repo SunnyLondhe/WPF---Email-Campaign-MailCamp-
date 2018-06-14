@@ -36,7 +36,7 @@ namespace EMail_Campaign.UserControl
         {
             try
             {
-                contacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("contacts.xml");
+                contacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("DATA\\contacts.xml");
                 fillFileList();
                 //cboGroups.SelectedItem = "--Blank--";
             }
@@ -64,7 +64,7 @@ namespace EMail_Campaign.UserControl
         }
         public void fillFileList()
         {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory(), "G*.xml");
+            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\DATA\\", "G*.xml");
             // cboGroups.Items.Add("--Blank--");
             foreach (string file in filePaths)
             {
@@ -94,7 +94,7 @@ namespace EMail_Campaign.UserControl
                             counter++;
                         }
                     }
-                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\contacts.xml", contacts);
                     MessageBox.Show("Deleted " + counter + " items");
                 }
                 catch (Exception ex)
@@ -115,7 +115,7 @@ namespace EMail_Campaign.UserControl
         private void clearText()
         {
             txtName.Clear();
-            txtAge.Clear();
+            
             txtCity.Clear();
             txtState.Clear();
             txtZip.Clear();
@@ -152,16 +152,15 @@ namespace EMail_Campaign.UserControl
                             State = splitLine[3].Trim(),
                             Zip = splitLine[4].Trim(),
                             Gender = splitLine[5].Trim(),
-                            Age = splitLine[6].Trim(),
+                            dateofbirth = splitLine[6].Trim(),
 
                         };
-
-
+                                    
                         contacts.Add(oContact);
 
                     }
                     streamReader.Close();
-                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\contacts.xml", contacts);
                     MessageBox.Show("Updated " + count + "  contacts");
                 }
             }
@@ -174,7 +173,7 @@ namespace EMail_Campaign.UserControl
 
         private void btn_Sort_Click(object sender, RoutedEventArgs e)
         {
-            var lst = from s in contacts orderby s.Name, s.City, s.Zip, s.State, s.Age, s.Gender select s;
+            var lst = from s in contacts orderby s.Name, s.City, s.Zip, s.State, s.dateofbirth, s.Gender select s;
             lbx_Contact.ItemsSource = lst;
         }
 
@@ -193,7 +192,7 @@ namespace EMail_Campaign.UserControl
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 contacts.Clear();
-                Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+                Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\contacts.xml", contacts);
             }
         }
 
@@ -201,12 +200,13 @@ namespace EMail_Campaign.UserControl
         {
             if (!string.IsNullOrEmpty(txtName.Text) || !string.IsNullOrEmpty(txtEmail.Text))
             {
-                var con = new Contact { Name = txtName.Text.ToString(), City = txtCity.Text.ToString(), State = txtState.Text.ToString(), Zip = txtZip.Text.ToString(), Email = txtEmail.Text.ToString(), Age = txtAge.Text.ToString(), Gender = cboGender.SelectedItem.ToString() };
+                var con = new Contact { Name = txtName.Text.ToString(), City = txtCity.Text.ToString(), State = txtState.Text.ToString(), Zip = txtZip.Text.ToString(), Email = txtEmail.Text.ToString(), dateofbirth = txtdateofbirth.Text.ToString(), Gender = cboGender.SelectedItem.ToString() };
                 contacts.Add(con);
-                Storage.WriteToXmlFile<ObservableCollection<Contact>>("contacts.xml", contacts);
+                Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\contacts.xml", contacts);
                 clearText();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Please provide Name and Email-ID");
             }
         }
@@ -223,9 +223,10 @@ namespace EMail_Campaign.UserControl
                 }
                 else
                 {
-                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("G" + txt_GroupName.Text + ".xml", groupContacts);
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\G" + txt_GroupName.Text + ".xml", groupContacts);
                     groupContacts.Clear();
                     txt_GroupName.Clear();
+                    cboGroups.Items.Clear();
                     fillFileList();
                 }
             }
@@ -234,7 +235,7 @@ namespace EMail_Campaign.UserControl
                 MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure? ", "You want to update the selected group", System.Windows.MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("G" + cboGroups.SelectedItem.ToString() + ".xml", groupContacts);
+                    Storage.WriteToXmlFile<ObservableCollection<Contact>>("DATA\\G" + cboGroups.SelectedItem.ToString() + ".xml", groupContacts);
                     groupContacts.Clear();
                     txt_GroupName.Clear();
                     cboGroups.Items.Clear();
@@ -247,6 +248,7 @@ namespace EMail_Campaign.UserControl
         private void btnDeleteGroup_Click(object sender, RoutedEventArgs e)
         {
             groupContacts.Remove(lbx_ContGroup.SelectedItem as Contact);
+
 
         }
 
@@ -274,7 +276,10 @@ namespace EMail_Campaign.UserControl
                 MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure? ", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    File.Delete(Directory.GetCurrentDirectory() + "\\G" + cboGroups.SelectedItem.ToString() + ".xml");
+                    File.Delete(Directory.GetCurrentDirectory() + "\\DATA\\G" + cboGroups.SelectedItem.ToString() + ".xml");
+                    groupContacts.Clear();
+                    txt_GroupName.Clear();
+                    cboGroups.Items.Clear();
                     fillFileList();
                     MessageBox.Show("Group " + cboGroups.SelectedItem.ToString() + " Deleted Successfullty");
                 }
@@ -302,9 +307,8 @@ namespace EMail_Campaign.UserControl
 
                     if (!string.IsNullOrEmpty(cboGroups.SelectedItem.ToString()))
                     {
-                        groupContacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("G" + cboGroups.SelectedItem.ToString() + ".xml");
+                        groupContacts = Storage.ReadFromXmlFile<ObservableCollection<Contact>>("DATA\\G" + cboGroups.SelectedItem.ToString() + ".xml");
                         lbx_ContGroup.ItemsSource = groupContacts;
-                        fillFileList();
                     }
                     else
                     {
@@ -319,6 +323,25 @@ namespace EMail_Campaign.UserControl
                 MessageBox.Show("Error : " + ex.Message);
             }
 
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var slider = sender as Slider;         
+            double value = slider.Value;           
+            TextElement.SetFontSize(ContactGrid, value);
+        }
+
+        private void txt_GroupName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb.Text.Contains(" "))
+            {
+                MessageBox.Show("Your error message for users");
+                tb.Clear();
+                tb.Focus();
+
+            }
         }
     }
 }

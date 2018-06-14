@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Template>
+    <TemplateName>Sample</TemplateName>
+    <Subject>This is Sample Emiail</Subject>
+    <EmailContext>This is sample Email from MailCamp</EmailContext>
+  </Template>
+  <Template>
+    <TemplateName>Demo </TemplateName>
+    <Subject>This is Demo of Mail Camp</Subject>
+    <EmailContext>Hello &lt;Name&gt;,
+</EmailContext>
+  </Template>
+  <Template>
+    <TemplateName>Demo2</TemplateName>
+    <Subject>This is Demo2 Emial</Subject>
+    <EmailContext>Hello &lt;Name&gt;,
+This is sample Emial. Please ignore
+
+Regards,
+Mail Camp
+</EmailContext>
+  </Template>
+</ArrayOfTemplate>

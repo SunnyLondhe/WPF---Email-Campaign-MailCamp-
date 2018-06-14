@@ -39,10 +39,8 @@
 
             </GroupBox>
         </Grid>
-        <GroupBox Header="Language Configuration" HorizontalAlignment="Left" Margin="15,210,0,0"  >
-            <StackPanel HorizontalAlignment="Left"  Margin="10,20,0,0" VerticalAlignment="Top"  >
-            </StackPanel>
-        </GroupBox>
-
+        <Button x:Name="HelpBtn" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Margin="0,50,10,0" Background="{x:Null}" BorderBrush="{x:Null}"  >
+            <Image Source="/EMail_Campaign;component/Resources/Image/Help.gif" ToolTip="Help" />
+        </Button>
     </Grid>
 </UserControl>

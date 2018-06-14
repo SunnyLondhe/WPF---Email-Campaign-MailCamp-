@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\
 EMail_Campaign
 none
 false
 DEBUG;TRACE
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\App.xaml
-51956721688
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\App.xaml
+6-2129008974
 
-141510072486
+17-1975733008
 151984215308
-MainWindow.xaml;UserControl\ContactControl.xaml;UserControl\Dashboard.xaml;UserControl\Settings.xaml;UserControl\Theme.xaml;
+MainWindow.xaml;Settings.xaml;UserControl\ContactControl.xaml;UserControl\Dashboard.xaml;UserControl\Settings.xaml;UserControl\Theme.xaml;
 
 False
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Template>
+    <TemplateName>Christmas</TemplateName>
+    <Subject>Marry Christmas !!</Subject>
+    <EmailContext>Hello &lt;Name&gt;,
+Best Wishes from MailCamp Team.
+
+Regards,
+MailCamp
+</EmailContext>
+  </Template>
+  <Template>
+    <TemplateName>Diwali Wishes</TemplateName>
+    <Subject>Happy Diwali !!!!</Subject>
+    <EmailContext>Hello &lt;Name&gt;,
+Wish You happy diwali.</EmailContext>
+  </Template>
+  <Template>
+    <TemplateName>Sample</TemplateName>
+    <Subject>This is Sample Emiail</Subject>
+    <EmailContext>Dear &lt;Name&gt;,
+We would like to say how much we enjoyed working with you this year. We very much look forward to continuing to work with you next year and wish both you and your team a very happy holiday period, and a healthy and prosperous New Year.
+
+Best regards,
+MailCamp
+</EmailContext>
+  </Template>
+</ArrayOfTemplate>

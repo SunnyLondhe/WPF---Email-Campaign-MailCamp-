@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact>
+    <Name>Sunny Londhe</Name>
+    <Email>sunnyguru3737@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <dateofbirth>5/8/1991</dateofbirth>
+  </Contact>
+  <Contact>
+    <Name>Arti Kapade</Name>
+    <Email>kapadearti@gmail.com</Email>
+    <Gender>Female</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <dateofbirth>20/8/1992</dateofbirth>
+  </Contact>
+  <Contact>
+    <Name>Saumil Sah</Name>
+    <Email>saumilece23@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69124</Zip>
+    <dateofbirth>12/3/1991</dateofbirth>
+  </Contact>
+  <Contact>
+    <Name>Hardik Joshi</Name>
+    <Email>hardikjoshi0406@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69124</Zip>
+    <dateofbirth>4/6/1994</dateofbirth>
+  </Contact>
+  <Contact>
+    <Name>Karan Vichare</Name>
+    <Email>karanvichare20@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <dateofbirth>4/6/1992</dateofbirth>
+  </Contact>
+  <Contact>
+    <Name>Pravin Konade</Name>
+    <Email>pkonade4@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <dateofbirth>4/6/1992</dateofbirth>
+  </Contact>
+</ArrayOfContact>

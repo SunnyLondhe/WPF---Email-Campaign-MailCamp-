@@ -12,6 +12,7 @@
         WindowState="Maximized" UseLayoutRounding="False">
     
     <Grid>
+        
         <DockPanel Margin="10">
 
             <Button x:Name="DashboardMenu" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Click="DashboardMenu_Click" >
@@ -37,7 +38,7 @@
             
         </Grid>
         </Grid>
-
+       
 
 
     </Grid>

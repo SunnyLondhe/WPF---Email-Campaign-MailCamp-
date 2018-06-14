@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfErrorlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Errorlog>
+    <logtime>6/14/2018 2:55:02 AM</logtime>
+    <ErrorType>Information</ErrorType>
+    <logDiscription>Email Sent Started</logDiscription>
+  </Errorlog>
+  <Errorlog>
+    <logtime>6/14/2018 2:55:02 AM</logtime>
+    <ErrorType>Critical</ErrorType>
+    <groupname>FirstGroup</groupname>
+    <templateName>Diwali</templateName>
+    <logDiscription>Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index</logDiscription>
+  </Errorlog>
+  <Errorlog>
+    <logtime>6/14/2018 2:55:02 AM</logtime>
+    <ErrorType>Information</ErrorType>
+    <groupname>FirstGroup</groupname>
+    <templateName>Diwali</templateName>
+    <logDiscription>Email Sent Completed</logDiscription>
+  </Errorlog>
+</ArrayOfErrorlog>

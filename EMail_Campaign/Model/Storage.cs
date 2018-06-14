@@ -17,7 +17,10 @@ namespace EMail_Campaign
             try
             {
                 var serializer = new XmlSerializer(typeof(T));
-                writer = new StreamWriter(filePath, append);
+                if(append == true)
+                    writer = new StreamWriter(filePath);
+                else
+                    writer = new StreamWriter(filePath, append);
                 serializer.Serialize(writer, objectToWrite);
             }
             finally

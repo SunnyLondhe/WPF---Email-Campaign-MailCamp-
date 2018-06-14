@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEmailSentlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EmailSentlog>
+    <logtime>6/12/2018 12:09:29 AM</logtime>
+    <contactname>Hardik Joshi</contactname>
+    <email>hardikjoshi0406@gmail.com</email>
+    <status>Sent</status>
+    <message />
+  </EmailSentlog>
+  <EmailSentlog>
+    <logtime>6/12/2018 12:09:30 AM</logtime>
+    <contactname>Saumil Sah</contactname>
+    <email>saumilece23@gmail.com</email>
+    <status>Sent</status>
+    <message />
+  </EmailSentlog>
+  <EmailSentlog>
+    <logtime>6/12/2018 12:09:31 AM</logtime>
+    <contactname>Sunny Londhe</contactname>
+    <email>sunnyguru3737@gmail.com</email>
+    <status>Sent</status>
+    <message />
+  </EmailSentlog>
+  <EmailSentlog>
+    <logtime>6/12/2018 12:09:32 AM</logtime>
+    <contactname>Arti Kapade</contactname>
+    <email>kapadearti@gmail.com</email>
+    <status>Sent</status>
+    <message />
+  </EmailSentlog>
+</ArrayOfEmailSentlog>

@@ -12,7 +12,6 @@ namespace EMail_Campaign
         public string TemplateName { get; set; }
         public string Subject{ get; set; }
         public string EmailContext{ get; set; }
-
         
     }
 }

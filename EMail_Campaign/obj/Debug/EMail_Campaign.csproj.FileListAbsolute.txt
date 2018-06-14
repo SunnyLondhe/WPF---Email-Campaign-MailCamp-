@@ -3,12 +3,16 @@ D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\EMail_Campaign.pdb
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\MainWindow.g.cs
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\ContactControl.g.cs
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.g.cs
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.g.cs
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Theme.g.cs
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\App.g.cs
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign_MarkupCompile.cache
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign_MarkupCompile.lref
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\MainWindow.baml
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\ContactControl.baml
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.baml
+D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.baml
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Theme.baml
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.g.resources
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.Properties.Resources.resources
@@ -17,8 +21,30 @@ D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.exe
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.pdb
 D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.csprojAssemblyReference.cache
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.g.cs
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.baml
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.g.cs
-D:\SRH Cource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\EMail_Campaign.exe.config
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\EMail_Campaign.exe
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\EMail_Campaign.pdb
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\MainWindow.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\ContactControl.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Theme.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\App.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign_MarkupCompile.cache
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign_MarkupCompile.lref
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\MainWindow.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\ContactControl.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Dashboard.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Settings.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\UserControl\Theme.baml
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.g.resources
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.Properties.Resources.resources
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.csproj.GenerateResource.cache
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.csproj.CoreCompileInputs.cache
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.exe
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.pdb
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\Properties\Resources.resx
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\bin\Debug\Properties\Resources.Designer.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\EMail_Campaign.csprojAssemblyReference.cache
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\Settings.g.cs
+D:\SRHCource\ACS\Project\EmailClient_Campaign\EMail_Campaign\EMail_Campaign\obj\Debug\Settings.baml

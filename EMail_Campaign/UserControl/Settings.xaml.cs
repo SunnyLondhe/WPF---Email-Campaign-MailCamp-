@@ -19,7 +19,7 @@ namespace EMail_Campaign.UserControl
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
-    public partial class Settings 
+    public partial class Settings
     {
         ObservableCollection<Setting> settings;
         public Settings()
@@ -30,10 +30,10 @@ namespace EMail_Campaign.UserControl
         {
             try
             {
-                settings = Storage.ReadFromXmlFile<ObservableCollection<Setting>>("settings.xml");
+                settings = Storage.ReadFromXmlFile<ObservableCollection<Setting>>("DATA\\settings.xml");
                 this.DataContext = settings;
-                txtPassword.Password =settings[0].password;
-                          }
+                txtPassword.Password = settings[0].password;
+            }
             catch (Exception ex)
             {
                 //throw;
@@ -49,10 +49,16 @@ namespace EMail_Campaign.UserControl
                 settings.Add(oSet);
 
             }
-            else {
-                settings[0].password = CryptPass.Crypt( txtPassword.Password);
-                Storage.WriteToXmlFile<ObservableCollection<Setting>>("settings.xml", settings);
+            else
+            {
+                settings[0].password = CryptPass.Crypt(txtPassword.Password);
+                Storage.WriteToXmlFile<ObservableCollection<Setting>>("DATA\\settings.xml", settings);
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string a = "DATA\\GArtiGroup.xml".Replace("DATA\\", "").Remove(0, 1).Replace(".xml", "");
         }
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact>
+    <Name>Hardik Joshi</Name>
+    <Email>hardikjoshi0406@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69124</Zip>
+    <Age>24</Age>
+  </Contact>
+  <Contact>
+    <Name>Saumil Sah</Name>
+    <Email>saumilece23@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69124</Zip>
+    <Age>26</Age>
+  </Contact>
+  <Contact>
+    <Name>Sunny Londhe</Name>
+    <Email>sunnyguru3737@gmail.com</Email>
+    <Gender>Male</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <Age>26</Age>
+  </Contact>
+  <Contact>
+    <Name>Arti Kapade</Name>
+    <Email>kapadearti@gmail.com</Email>
+    <Gender>Female</Gender>
+    <City>Heidelberg</City>
+    <State>BW</State>
+    <Zip>69123</Zip>
+    <Age>25</Age>
+  </Contact>
+</ArrayOfContact>

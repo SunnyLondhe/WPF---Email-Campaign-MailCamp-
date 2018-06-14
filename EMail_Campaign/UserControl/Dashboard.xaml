@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EMail_Campaign.UserControl"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
     <Grid >
-        
+
         <Grid.RowDefinitions >
             <RowDefinition Height="*" />
             <RowDefinition Height="5" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,30 +20,34 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid  >
-            <GroupBox Header="Send Manual Email to Groups" Margin="0,0,0,0" >
+            <GroupBox Header="Send Manual Email to Groups" Margin="10"  >
                 <Grid >
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Margin="0,10,0,0">
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Name"  VerticalAlignment="Center" />
-                        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding Name}" Width="200"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Select Email Template"  VerticalAlignment="Center" />
+                        <ComboBox x:Name="cboTemplate" Width="150"   DisplayMemberPath="TemplateName"  SelectedIndex="0"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,35,0,0">
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Gender"  VerticalAlignment="Center" />
-                        <ComboBox x:Name="cboGender" Width="100" SelectedValue="{Binding Gender}" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,40,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Select Contact Group"  VerticalAlignment="Center" />
+                        <ComboBox x:Name="cboConGroup" Width="150"  SelectedIndex="0"  />
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="150,75,0,0">
+                        <Button Content="Send Email" Name="btnSendMail" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="btnSendMail_Click" />
+                    </StackPanel>
+                    
 
                 </Grid>
 
             </GroupBox>
         </Grid>
-        <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" />
+        <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch"  Background="#FFA2A2A2" />
         <Grid Grid.Row="2">
-            <GroupBox Header="Sent Mail Details">
+            <GroupBox Header="Sent Mail Details" Margin="10">
                 <Grid>
                     <StackPanel HorizontalAlignment="Left"  Margin="0,5,0,0" VerticalAlignment="Top" Width="180" Height="auto"  >
                         <TextBlock TextWrapping="Wrap" Text="Filter contact by name"/>
                         <TextBox x:Name="tbx_filter" Height="23" TextWrapping="Wrap" />
                     </StackPanel>
-                    <ListView Margin="0,50,0,0" Name="lbx_Contact"  >
+                    <ListView Margin="0,50,0,0" Name="lbx_EmailSent"  >
                         <ListView.View>
                             <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Contact List">
 
@@ -55,29 +59,32 @@
                                     </ContextMenu>
                                 </GridView.ColumnHeaderContextMenu>
                                 <!-- Add GridVeiw Columns -->
-                                <GridViewColumn Header=" Name" Width="50" DisplayMemberBinding="{Binding Path=Name}" />
-                                <GridViewColumn Header=" Email" Width="50" DisplayMemberBinding="{Binding Path=Email}" />
-                                <GridViewColumn Header=" Gender" Width="50" DisplayMemberBinding="{Binding Path=Gender}" />
-                               
+                                <GridViewColumn Header="Log Time" Width="150" DisplayMemberBinding="{Binding Path=logtime}" />
+                                <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Path=contactname}" />
+                                <GridViewColumn Header="Email" Width="160" DisplayMemberBinding="{Binding Path=email}" />
+                                <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Path=status}" />
+                                <GridViewColumn Header="Message" Width="200" DisplayMemberBinding="{Binding Path=message}" />
+
 
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    
+
                 </Grid>
-                
+
             </GroupBox>
 
 
         </Grid>
+
         <Grid Grid.Column="2" Grid.Row="2">
-            <GroupBox Header="Sent Logs">
+            <GroupBox Header="Sent Logs" Margin="10">
                 <Grid>
                     <StackPanel HorizontalAlignment="Left"  Margin="0,5,0,0" VerticalAlignment="Top" Width="180" Height="auto"  >
                         <TextBlock TextWrapping="Wrap" Text="Filter contact by name"/>
                         <TextBox x:Name="tbx_LogFilter" Height="23" TextWrapping="Wrap" />
                     </StackPanel>
-                    <ListView Margin="0,50,0,0" Name="lbx_"  >
+                    <ListView Margin="0,50,0,0" Name="lbx_ErrorLog"  >
                         <ListView.View>
                             <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Contact List">
 
@@ -89,9 +96,11 @@
                                     </ContextMenu>
                                 </GridView.ColumnHeaderContextMenu>
                                 <!-- Add GridVeiw Columns -->
-                                <GridViewColumn Header=" Name" Width="50" DisplayMemberBinding="{Binding Path=Name}" />
-                                <GridViewColumn Header=" Email" Width="50" DisplayMemberBinding="{Binding Path=Email}" />
-                                <GridViewColumn Header=" Gender" Width="50" DisplayMemberBinding="{Binding Path=Gender}" />
+                                <GridViewColumn Header=" Log Time" Width="130" DisplayMemberBinding="{Binding Path=logtime}" />
+                                <GridViewColumn Header=" Error Type" Width="100" DisplayMemberBinding="{Binding Path=ErrorType}" />
+                                <GridViewColumn Header=" Group Name" Width="100" DisplayMemberBinding="{Binding Path=groupname}" />
+                                <GridViewColumn Header=" Template Name" Width="100" DisplayMemberBinding="{Binding Path=templateName}" />
+                                <GridViewColumn Header=" Discription" Width="130" DisplayMemberBinding="{Binding Path=logDiscription}" />
 
 
                             </GridView>
@@ -102,17 +111,46 @@
 
             </GroupBox>
         </Grid>
-        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+        <GridSplitter Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" Background="#FFA2A2A2" />
+        <GridSplitter Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Background="#FFA2A2A2" />
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" Background="#FFA2A2A2" />
         <Grid Grid.Column="2" >
-            <GroupBox Header="Schedule Email" Margin="0,0,0,0" >
+            <GroupBox Header="Schedule Email" Margin="10" >
                 <Grid >
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Margin="0,10,0,0">
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Name"  VerticalAlignment="Center" />
-                        <TextBox x:Name="txta" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="{Binding Name}" Width="200"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Task Name"  VerticalAlignment="Center" />
+                        <TextBox x:Name="txtTaskName" Text="MailChampSchedule" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Width="200"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,35,0,0">
-                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Gender"  VerticalAlignment="Center" />
-                        <ComboBox x:Name="cbos" Width="100" SelectedValue="{Binding Gender}" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,40,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Trigger"  VerticalAlignment="Center" />
+                        <ComboBox x:Name="cboTaskTrigger" Width="100" SelectedIndex="0">
+                            <ComboBoxItem>ONCE</ComboBoxItem>
+                            <ComboBoxItem>DAILY</ComboBoxItem>                            
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,70,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Date"  VerticalAlignment="Center" />
+                        <!--<DatePicker x:Name="txtSchDatePick"  SelectedDateFormat="Short" DisplayDate="06/12/2018 02:31:00"   />-->
+                        <TextBox x:Name="txtSchDatePick" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Width="100"/>
+                        <TextBlock  TextWrapping="Wrap" Width="150" Text="HH:MM:SS"  HorizontalAlignment="Right" Margin="5,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,100,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Start"  VerticalAlignment="Center" />
+                        <TextBox x:Name="txtStartTime" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Width="100"/>
+                        <TextBlock  TextWrapping="Wrap" Width="150" Text="HH:MM:SS"  HorizontalAlignment="Right" Margin="5,0,0,0"/>
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" Margin="0,130,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Select Email Template"  VerticalAlignment="Center" />
+                        <ComboBox x:Name="cboSchTemplate" Width="150"   DisplayMemberPath="TemplateName"  SelectedIndex="0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,170,0,0">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="150" Text="Select Contact Group"  VerticalAlignment="Center" />
+                        <ComboBox x:Name="cboSchConGroup" Width="150"  SelectedIndex="0"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="150,200,0,0">
+                        <Button Content="Schedule" Name="btnSchedule" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="btnSchedule_Click" />
+                        <Button Content="Open Win Schedular" Margin="5,0,0,0" Name="btnWinSchedular" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="btnWinSchedular_Click" />
                     </StackPanel>
 
                 </Grid>

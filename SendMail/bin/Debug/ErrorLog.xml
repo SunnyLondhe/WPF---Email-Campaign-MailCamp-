@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfErrorlog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Errorlog>
+    <logtime>6/12/2018 12:09:25 AM</logtime>
+    <ErrorType>Information</ErrorType>
+    <logDiscription>Email Sent Started</logDiscription>
+  </Errorlog>
+</ArrayOfErrorlog>

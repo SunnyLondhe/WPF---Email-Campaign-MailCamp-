@@ -34,7 +34,7 @@ namespace EMail_Campaign.UserControl
             try
             {
                 
-                templates = Storage.ReadFromXmlFile<ObservableCollection<Template>>("Templates.xml");
+                templates = Storage.ReadFromXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml");
                // btnSave.IsEnabled = false;
             }
             catch (Exception ex)
@@ -43,6 +43,7 @@ namespace EMail_Campaign.UserControl
             }
 
             //  setGenderCbo();
+            templates = Storage.ReadFromXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml");
             lbx_Template.ItemsSource = templates;
             //ListView1.ItemsSource = contacts;
         }
@@ -71,7 +72,7 @@ namespace EMail_Campaign.UserControl
                             counter++;
                         }
                     }
-                    Storage.WriteToXmlFile<ObservableCollection<Template>>("Templates.xml", templates);
+                    Storage.WriteToXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml", templates);
                     MessageBox.Show("Deleted " + counter + " items");
                 }
                 catch (Exception ex)
@@ -94,7 +95,10 @@ namespace EMail_Campaign.UserControl
         {
             txtTemplateName.Clear();
             txtSubject.Clear();
-            txtRichText.Document.Blocks.Clear();
+            // txtRichText.Document.Blocks.Clear();
+            txtRichText.SelectAll();
+
+            txtRichText.Selection.Text = "";
             lbx_Template.SelectedItems.Clear();
             
 
@@ -122,25 +126,29 @@ namespace EMail_Campaign.UserControl
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 templates.Clear();
-                Storage.WriteToXmlFile<ObservableCollection<Template>>("Templates.xml", templates);
+                Storage.WriteToXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml", templates);
             }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             var EmailTemplateText = new TextRange(txtRichText.Document.ContentStart, txtRichText.Document.ContentEnd);
+            
             // return textRange.Text;
             if (!templates.Any(str => str.TemplateName.Contains(txtTemplateName.Text.ToString())))
             {
                 var Temp = new Template { TemplateName = txtTemplateName.Text.ToString(), Subject = txtSubject.Text.ToString(), EmailContext = EmailTemplateText.Text.ToString() };
 
                 templates.Add(Temp);
-                Storage.WriteToXmlFile<ObservableCollection<Template>>("Templates.xml", templates);
+                Storage.WriteToXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml", templates);
             }
             else {
-                Storage.WriteToXmlFile<ObservableCollection<Template>>("Templates.xml", templates);
+                Storage.WriteToXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml", templates);
             }
-        
+            clearText();
+            templates = Storage.ReadFromXmlFile<ObservableCollection<Template>>("DATA\\Templates.xml");
+            lbx_Template.ItemsSource = templates;
+
         }
     }
 }

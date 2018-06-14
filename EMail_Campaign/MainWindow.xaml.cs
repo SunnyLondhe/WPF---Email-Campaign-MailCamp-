@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +25,44 @@ namespace EMail_Campaign
         public MainWindow()
         {
             InitializeComponent();
+            CreateFiles();
+        }
+        public void CreateFiles()
+        {
+            if (!System.IO.Directory.Exists(Directory.GetCurrentDirectory() + "\\DATA"))
+                System.IO.Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\DATA");
+            string contactsFile = Directory.GetCurrentDirectory() + "\\DATA\\contacts.xml";
+            string TemplatesFile = Directory.GetCurrentDirectory() + "\\DATA\\Templates.xml";
+            string settingsFile = Directory.GetCurrentDirectory() + "\\DATA\\settings.xml";
+            string ErrorLogFile = Directory.GetCurrentDirectory() + "\\DATA\\ErrorLog.xml";
+            string EmailSetLogFile = Directory.GetCurrentDirectory() + "\\DATA\\EmailSentLog.xml";
+            //DATA\\contacts.xml
+            if (!(File.Exists(contactsFile)))
+                File.CreateText(contactsFile);
+
+
+            if (!(File.Exists(TemplatesFile)))
+                File.CreateText(TemplatesFile);
+
+            if (!(File.Exists(settingsFile)))
+                File.CreateText(settingsFile);
+
+            if (!(File.Exists(ErrorLogFile)))
+                File.CreateText(ErrorLogFile);
+
+
+            if (!(File.Exists(EmailSetLogFile)))
+                File.CreateText(EmailSetLogFile);
+
+
+
+
         }
 
 
         private void ContactMenu_Click(object sender, RoutedEventArgs e)
         {
-            if (Grd_MainView.Children.Count >0)
+            if (Grd_MainView.Children.Count > 0)
                 Grd_MainView.Children.RemoveAt(0);
             UserControl.ContactControl C_Control = new UserControl.ContactControl();
 
@@ -58,11 +91,9 @@ namespace EMail_Campaign
 
         private void SettingMenu_Click(object sender, RoutedEventArgs e)
         {
-            if (Grd_MainView.Children.Count > 0)
-                Grd_MainView.Children.RemoveAt(0);
-            UserControl.Settings C_Setting = new UserControl.Settings();
+            Settings wSetting = new Settings();
 
-            Grd_MainView.Children.Add(C_Setting);
+            wSetting.Show();
 
         }
 
@@ -70,6 +101,11 @@ namespace EMail_Campaign
         {
             UserControl.Dashboard C_Dashboard = new UserControl.Dashboard();
             Grd_MainView.Children.Add(C_Dashboard);
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
     }
 }
