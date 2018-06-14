@@ -125,9 +125,9 @@
                     
                 </GroupBox>
             </StackPanel>
-            <Button x:Name="HelpBtn" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Margin="0,50,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Btn_Help_Click" >
+            <!--<Button x:Name="HelpBtn" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Margin="0,50,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Btn_Help_Click" >
                 <Image Source="/EMail_Campaign;component/Resources/Image/Help.gif" ToolTip="Help" />
-            </Button>
+            </Button>-->
 
             <Slider Minimum="12" Maximum="15" Value="{Binding GridFontSize, Mode=TwoWay}" 
         ValueChanged="Slider_ValueChanged"  Width="180" Height="50" VerticalAlignment="bottom" HorizontalAlignment="Right" Margin="0,70,20,10"/>

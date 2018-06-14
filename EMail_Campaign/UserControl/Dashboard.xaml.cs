@@ -94,5 +94,17 @@ namespace EMail_Campaign.UserControl
         {
             Process.Start("C:\\WINDOWS\\system32\\cmd.exe", "/c taskschd.msc");
         }
+
+        private void tbx_filterSentMailLog_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var filterSent = from eLogs in emailsentlogs where eLogs.contactname.Contains(tbx_filterSentMailLog.Text) select eLogs;
+            lbx_EmailSent.ItemsSource = filterSent;
+        }
+
+        private void tbx_filterSentLogs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var filterLogs = from eLogs in errorlogs where eLogs.ErrorType.Contains(tbx_filterSentMailLog.Text) select eLogs;
+            lbx_ErrorLog.ItemsSource = filterLogs;
+        }
     }
 }

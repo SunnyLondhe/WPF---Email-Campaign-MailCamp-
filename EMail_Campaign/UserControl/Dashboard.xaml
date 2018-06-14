@@ -44,8 +44,8 @@
             <GroupBox Header="Sent Mail Details" Margin="10">
                 <Grid>
                     <StackPanel HorizontalAlignment="Left"  Margin="0,5,0,0" VerticalAlignment="Top" Width="180" Height="auto"  >
-                        <TextBlock TextWrapping="Wrap" Text="Filter contact by name"/>
-                        <TextBox x:Name="tbx_filter" Height="23" TextWrapping="Wrap" />
+                        <TextBlock TextWrapping="Wrap" Text="Filter Log"/>
+                        <TextBox x:Name="tbx_filterSentMailLog" Height="23" TextWrapping="Wrap"  TextChanged="tbx_filterSentMailLog_TextChanged"/>
                     </StackPanel>
                     <ListView Margin="0,50,0,0" Name="lbx_EmailSent"  >
                         <ListView.View>
@@ -82,7 +82,7 @@
                 <Grid>
                     <StackPanel HorizontalAlignment="Left"  Margin="0,5,0,0" VerticalAlignment="Top" Width="180" Height="auto"  >
                         <TextBlock TextWrapping="Wrap" Text="Filter contact by name"/>
-                        <TextBox x:Name="tbx_LogFilter" Height="23" TextWrapping="Wrap" />
+                        <TextBox x:Name="tbx_filterSentLogs" Height="23" TextWrapping="Wrap" TextChanged="tbx_filterSentLogs_TextChanged" />
                     </StackPanel>
                     <ListView Margin="0,50,0,0" Name="lbx_ErrorLog"  >
                         <ListView.View>
